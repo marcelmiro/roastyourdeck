@@ -1,6 +1,6 @@
 ---
 import Container from './Container.astro'
-import { waitlistUrl } from '../data'
+// import { waitlistUrl } from '../data'
 ---
 
 <div class="relative py-16">
@@ -38,20 +38,6 @@ import { waitlistUrl } from '../data'
 				<p class="text-center text-xl text-gray-600 dark:text-gray-300">
 					Join our waitlist to get early-access to our platform.
 				</p>
-				<div class="flex flex-wrap justify-center gap-6">
-					<a
-						href={waitlistUrl}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-					>
-						<span
-							class="relative text-base font-semibold text-white dark:text-dark"
-						>
-							Join waitlist
-						</span>
-					</a>
-				</div>
 			</div>
 		</div>
 	</Container>
