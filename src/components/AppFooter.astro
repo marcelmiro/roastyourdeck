@@ -1,0 +1,70 @@
+---
+import Container from './Container.astro'
+import Logo from './Logo.astro'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="pb-4">
+	<Container>
+		<div class="table mx-auto [&_a]:px-6 [&_a]:py-4">
+			<Logo />
+		</div>
+
+		<div
+			class="mt-12 flex flex-wrap justify-center items-center text-xl text-gray-900 dark:text-white"
+		>
+			<span class="text-gray-600 dark:text-gray-300">
+				Need help?&nbsp;
+			</span>
+			<span class="font-medium">hello@roastyourdeck.com</span>
+		</div>
+
+		<ul
+			role="list"
+			class="mt-2 flex flex-wrap items-center justify-center gap-4 py-4 text-gray-600 dark:text-gray-400 sm:gap-8"
+		>
+			<li role="listitem">
+				<a
+					href="/#home"
+					class="duration-300 hover:text-primary dark:hover:text-white"
+				>
+					Home
+				</a>
+			</li>
+			<li role="listitem">
+				<a
+					href="/#features"
+					class="duration-300 hover:text-primary dark:hover:text-white"
+				>
+					Features
+				</a>
+			</li>
+			<li role="listitem">
+				<a
+					href="/#solution"
+					class="duration-300 hover:text-primary dark:hover:text-white"
+				>
+					Solution
+				</a>
+			</li>
+		</ul>
+		<p
+			class="mt-8 text-gray-800 dark:text-white mx-auto text-center text-lg"
+		>
+			This website is sponsored by <a
+				href="https://unistart.io/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-semibold hover:text-primary transition duration-200"
+			>
+				unistart.io
+			</a>
+		</p>
+		<div class="mt-4 text-center">
+			<span class="text-sm tracking-wide text-gray-500"
+				>Copyright © Unistart {currentYear} - Present | All rights reserved</span
+			>
+		</div>
+	</Container>
+</footer>

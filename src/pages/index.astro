@@ -1,0 +1,24 @@
+---
+// import Solution from '../components/Solution.astro'
+import Features from '../components/Features.astro'
+import HeroSection from '../components/HeroSection.astro'
+import Layout from '../layouts/Layout.astro'
+import Testimonials from '../components/Testimonials.astro'
+import CallToAction from '../components/CallToAction.astro'
+// import Blog from '../components/Blog.astro'
+---
+
+<!-- TODO: SEO -->
+<Layout
+	title="Roast Your Deck | Perfect your pitch towards investors"
+	description="Democratizing financing for commodity firms. Unlock credit lines and enhance working capital with our innovative solutions."
+>
+	<main class="space-y-24 [&>*+*]:pt-16 mb-40">
+		<HeroSection />
+		<Features />
+		<!-- <Solution /> -->
+		<Testimonials />
+		<CallToAction />
+		<!-- <Blog /> -->
+	</main>
+</Layout>

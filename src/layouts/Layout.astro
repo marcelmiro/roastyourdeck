@@ -1,0 +1,84 @@
+---
+import AppFooter from '../components/AppFooter.astro'
+import AppHeader from '../components/AppHeader.astro'
+
+export interface Props {
+	title: string
+	description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="robots" content="noindex nofollow" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/favicon/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="/favicon/safari-pinned-tab.svg"
+			color="#fa8404"
+		/>
+		<link rel="shortcut icon" href="/favicon/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#191617" />
+		<meta
+			name="msapplication-config"
+			content="/favicon/browserconfig.xml"
+		/>
+		<meta name="theme-color" content="#191617" />
+	</head>
+
+	<body class="bg-white dark:bg-darker">
+		<AppHeader />
+		<slot />
+		<AppFooter />
+		<p aria-hidden class="sr-only">
+			Logo (https://twemoji.maxcdn.com/v/latest/svg/1f525.svg) by Twitter
+			is licensed under CC-BY 4.0
+			(https://creativecommons.org/licenses/by/4.0/)
+		</p>
+	</body>
+</html>
+<style>
+	html {
+		font-family: Urbanist, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+	}
+</style>
