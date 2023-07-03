@@ -1,0 +1,41 @@
+---
+export interface Props {
+    author: string
+    profileUrl: string
+    description?: string // Overrides `description` slot
+}
+
+const { author, profileUrl, description } = Astro.props
+---
+
+<div
+    class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-gray-200 to-white p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker"
+>
+    <div
+        class="relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-8 dark:bg-[#1c191a]"
+    >
+        <div class="flex gap-4">
+            <img
+                class="h-12 w-12 rounded-full"
+                src={profileUrl}
+                alt="profile picture"
+                width="400"
+                height="400"
+                loading="lazy"
+            />
+
+            <div>
+                <h3 class="text-lg font-medium text-gray-700 dark:text-white">
+                    {author}
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-300">
+                    {description || <slot name="description" />}
+                </p>
+            </div>
+        </div>
+
+        <p>
+            <slot />
+        </p>
+    </div>
+</div>

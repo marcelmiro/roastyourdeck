@@ -42,36 +42,43 @@ export const solution: Solution[] = [
 ]
 
 interface Package {
+	title: string
+	description: string
 	price: string // Without dollar symbol
 	priceIndicator?: string
-	description: string
 	features: Array<string | { text: string; disabled?: boolean }>
 	purchaseUrl: string
 }
 
 export const packages: Package[] = [
 	{
+		title: 'Quick roast',
+		description:
+			'Improve your pitch deck for the price of a cup of coffee ☕.',
 		price: '4.99',
 		priceIndicator: 'per feedback',
-		description:
-			'Improve your pitch deck with our basic and most affordable package.',
 		features: ['Pay-as-you-go', '48 hour delivery'],
 		purchaseUrl: '',
 	},
 	{
-		price: '100',
-		priceIndicator: 'per month',
+		title: 'Half roast',
 		description:
-			'Get limitless reviews - Great for builders and businesses.',
+			'Get a complete break down of your entire deck and receive unlimited feedback.',
+		price: '299',
+		priceIndicator: 'per week',
 		features: ['Unlimited reviews', '24 hour delivery'],
 		purchaseUrl: '',
 	},
 	{
-		price: '1,999',
-		priceIndicator: 'one time',
+		title: 'Full roast',
 		description:
 			"For those who want the perfect pitch deck - Don't worry, leave it in our hands.",
-		features: ['Complete redesign by our experts', '1 week delivery'],
+		price: '1,999',
+		priceIndicator: 'one time',
+		features: [
+			'Complete redesign by our experts',
+			'Unlimited changes for a month',
+		],
 		purchaseUrl: '',
 	},
 ]

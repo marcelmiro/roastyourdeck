@@ -1,22 +1,13 @@
 ---
 import Container from './Container.astro'
 import Subtitle from './Subtitle.astro'
-
-const reviewContainerClass =
-	'relative overflow-hidden rounded-2xl bg-gradient-to-b from-gray-200 to-white p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker'
-const reviewContentClass =
-	'relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-8 dark:bg-[#1c191a]'
+import Review from './Review.astro'
 ---
 
 <div class="text-gray-600 dark:text-gray-300" id="testimonials">
 	<Container>
 		<div class="mx-auto md:w-3/5">
-			<!-- <h2
-				class="text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl lg:text-5xl"
-			>
-				Trusted by thousands
-			</h2> -->
-			<Subtitle title="Testimonials">Trusted by thousands</Subtitle>
+			<Subtitle title="Testimonials">Reviews from founders</Subtitle>
 			<p class="mt-4 text-center text-gray-600 dark:text-gray-300">
 				Repellendus atque illum odio! Fugiat at expedita deserunt
 				dolorum molestias.
@@ -26,43 +17,33 @@ const reviewContentClass =
 			class="mt-10 sm:mt-12 grid gap-6 sm:grid-cols-2 md:mt-20 lg:grid-cols-3"
 		>
 			<div class="space-y-6">
-				<div class={reviewContainerClass}>
-					<div class={reviewContentClass}>
-						<div class="flex gap-4">
-							<img
-								class="h-12 w-12 rounded-full"
-								src="./images/avatars/avatar.webp"
-								alt="user avatar"
-								width="400"
-								height="400"
-								loading="lazy"
-							/>
-							<div>
-								<h3
-									class="text-lg font-medium text-gray-700 dark:text-white"
-								>
-									Daniella Doe
-								</h3>
-								<p
-									class="text-sm text-gray-500 dark:text-gray-300"
-								>
-									Mobile dev
-								</p>
-							</div>
-						</div><p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Illum aliquid quo eum quae quos illo earum
-							ipsa doloribus nostrum minus libero aspernatur
-							laborum cum, a suscipit, ratione ea totam ullam!
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Architecto laboriosam deleniti aperiam ab
-							veniam sint non cumque quis tempore cupiditate. Sint
-							libero voluptas veniam at reprehenderit, veritatis
-							harum et rerum.
-						</p>
-					</div>
-				</div>
-				<div class={reviewContainerClass}>
+				<Review
+					author="Luke Wiseman"
+					profileUrl="/images/avatars/luke-w.jpeg"
+					description="CEO of Loop Messaging"
+				>
+					<!-- <span slot="description">
+						CEO of <a
+							href="https://www.loopmessaging.io/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-primary hover:underline"
+							>Loop Messaging</a
+						>
+					</span> -->
+					Roast Your Deck's in-depth understanding of what investors look
+					for helped me fine-tune our deck from a rough draft into an engaging
+					pitch.
+				</Review>
+				<Review
+					author="Roland Shen"
+					profileUrl="/images/avatars/roland-s.jpeg"
+					description="Founder of Spellbound"
+				>
+					Thank you so much for giving us advice on how to craft a
+					compelling go-to-market strategy slide
+				</Review>
+				<!-- <div class={reviewContainerClass}>
 					<div class={reviewContentClass}>
 						<div class="flex gap-4">
 							<img
@@ -92,40 +73,23 @@ const reviewContentClass =
 							reprehenderit, veritatis harum et rerum.
 						</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="space-y-6">
-				<div class={reviewContainerClass}>
-					<div class={reviewContentClass}>
-						<div class="flex gap-4">
-							<img
-								class="h-12 w-12 rounded-full"
-								src="./images/avatars/luke-w.jpeg"
-								alt="user avatar"
-								width="400"
-								height="400"
-								loading="lazy"
-							/>
-							<div>
-								<h3
-									class="text-lg font-medium text-gray-700 dark:text-white"
-								>
-									Luke Wiseman
-								</h3>
-								<p
-									class="text-sm text-gray-500 dark:text-gray-300"
-								>
-									CEO of Courseflow
-								</p>
-							</div>
-						</div><p>
-							Roast Your Deck's in-depth understanding of what
-							investors look for helped me fine-tune our deck from
-							a rough draft into an engaging pitch.
-						</p>
-					</div>
-				</div>
-				<div class={reviewContainerClass}>
+				<Review
+					author="Linh Nguyen"
+					profileUrl="/images/avatars/linh-n.jpg"
+					description="Founder of EcoGlow"
+				>
+					I was blown away by RoastYourDeck's lightning-fast
+					turnaround! Within hours, they reviewed our pitch deck and
+					provided invaluable feedback. Their speed and efficiency
+					saved us valuable time, allowing us to iterate quickly and
+					present an even stronger deck. RoastYourDeck is a
+					game-changer for any founder in need of rapid, high-quality
+					feedback.
+				</Review>
+				<!-- <div class={reviewContainerClass}>
 					<div class={reviewContentClass}>
 						<div class="flex gap-4">
 							<img
@@ -186,39 +150,19 @@ const reviewContentClass =
 							reprehenderit, veritatis harum et rerum.
 						</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="space-y-6 sm:hidden lg:block">
-				<div class={reviewContainerClass}>
-					<div class={reviewContentClass}>
-						<div class="flex gap-4">
-							<img
-								class="h-12 w-12 rounded-full"
-								src="./images/avatars/avatar.webp"
-								alt="user avatar"
-								width="400"
-								height="400"
-								loading="lazy"
-							/>
-							<div>
-								<h3
-									class="text-lg font-medium text-gray-700 dark:text-white"
-								>
-									Daniella Doe
-								</h3>
-								<p
-									class="text-sm text-gray-500 dark:text-gray-300"
-								>
-									Mobile dev
-								</p>
-							</div>
-						</div><p>
-							Architecto laboriosam. Sint libero voluptas veniam
-							at reprehenderit, veritatis harum et rerum.
-						</p>
-					</div>
-				</div>
-				<div class={reviewContainerClass}>
+				<Review
+					author="Hunter Douglas"
+					profileUrl="/images/avatars/hunter-d.webp"
+					description="Founder of LoanEdge"
+				>
+					RoastYourDeck helped us nail the problem and solution slide,
+					making it stand out. I cannot recommend them enough for
+					making such service so accessible!!
+				</Review>
+				<!-- <div class={reviewContainerClass}>
 					<div class={reviewContentClass}>
 						<div class="flex gap-4">
 							<img
@@ -278,7 +222,7 @@ const reviewContentClass =
 							harum et rerum.
 						</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</Container>
