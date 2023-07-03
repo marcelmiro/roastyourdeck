@@ -1,5 +1,3 @@
-export const waitlistUrl = 'https://tally.so/'
-
 interface Solution {
 	title: string
 	points: Array<{
@@ -40,5 +38,40 @@ export const solution: Solution[] = [
 				icon: '<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.1034 11.103L11.9955 2.25684C11.9407 2.17769 11.8671 2.11292 11.7812 2.06816C11.6953 2.0234 11.5996 2 11.5024 2C11.4052 2 11.3095 2.0234 11.2236 2.06816C11.1376 2.11292 11.0641 2.17769 11.0093 2.25684L4.899 11.103C4.886 11.1212 4.87405 11.1401 4.86318 11.1596C4.26157 12.2867 3.96535 13.5479 4.00323 14.8211C4.0411 16.0943 4.41178 17.3362 5.07936 18.4266C5.74694 19.517 6.68879 20.419 7.81367 21.045C8.93855 21.671 10.2083 22 11.5 22C12.7917 22 14.0614 21.671 15.1863 21.045C16.3112 20.419 17.2531 19.517 17.9206 18.4266C18.5882 17.3362 18.9589 16.0943 18.9968 14.8211C19.0346 13.5479 18.7384 12.2867 18.1368 11.1596C18.1267 11.1401 18.1156 11.1213 18.1034 11.103Z"/></svg>',
 			},
 		],
+	},
+]
+
+interface Package {
+	price: string // Without dollar symbol
+	priceIndicator?: string
+	description: string
+	features: Array<string | { text: string; disabled?: boolean }>
+	purchaseUrl: string
+}
+
+export const packages: Package[] = [
+	{
+		price: '4.99',
+		priceIndicator: 'per feedback',
+		description:
+			'Improve your pitch deck with our basic and most affordable package.',
+		features: ['Pay-as-you-go', '48 hour delivery'],
+		purchaseUrl: '',
+	},
+	{
+		price: '100',
+		priceIndicator: 'per month',
+		description:
+			'Get limitless reviews - Great for builders and businesses.',
+		features: ['Unlimited reviews', '24 hour delivery'],
+		purchaseUrl: '',
+	},
+	{
+		price: '1,999',
+		priceIndicator: 'one time',
+		description:
+			"For those who want the perfect pitch deck - Don't worry, leave it in our hands.",
+		features: ['Complete redesign by our experts', '1 week delivery'],
+		purchaseUrl: '',
 	},
 ]

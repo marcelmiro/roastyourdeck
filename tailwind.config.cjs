@@ -379,6 +379,7 @@ module.exports = {
 		},
 		fontFamily: {
 			sans: [
+				'Urbanist',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',

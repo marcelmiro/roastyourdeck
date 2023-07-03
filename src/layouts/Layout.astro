@@ -1,34 +1,86 @@
 ---
-import AppFooter from '../components/AppFooter.astro'
 import AppHeader from '../components/AppHeader.astro'
+import AppFooter from '../components/AppFooter.astro'
 
-export interface Props {
+interface BaseProps {
 	title: string
-	description: string
+	canonical?: string
+	hideIndex?: boolean
 }
 
-const { title, description } = Astro.props
+interface SeoProps {
+	description: string
+	image?: string
+}
+
+type Never<T> = { [K in keyof T]?: never }
+
+export type Props = BaseProps &
+	(
+		| ({ hideIndex: true } & Never<SeoProps>)
+		| ({ hideIndex?: false } & SeoProps)
+	)
+
+function getCurrentUrl() {
+	const url = Astro.url
+	url.search = ''
+	return url.href
+}
+
+function getDefaultImage() {
+	return new URL('./banner.png', import.meta.env.SITE).href
+}
+
+const {
+	title,
+	description,
+	image = getDefaultImage(),
+	hideIndex = false,
+	canonical = getCurrentUrl(),
+} = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="dark">
 	<head>
+		<!-- Default meta -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 
+		<!-- Main meta -->
 		<title>{title}</title>
 		<meta name="title" content={title} />
-		<meta name="description" content={description} />
-		<meta name="robots" content="noindex nofollow" />
+		{description && <meta name="description" content={description} />}
+		<link rel="canonical" href={canonical} />
+		{hideIndex && <meta name="robots" content="noindex nofollow" />}
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
+		<!-- OG meta -->
+		<meta property="og:type" content="website" />
+		<meta name="og:title" property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Turismo" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content={title} />
+
+		<!-- Twitter meta -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@turismo_gg" />
+		<meta name="twitter:creator" content="@turismo_gg" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={title} />
+
+		<!-- Fonts -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 
+		<!-- Favicon -->
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
@@ -59,6 +111,17 @@ const { title, description } = Astro.props
 			content="/favicon/browserconfig.xml"
 		/>
 		<meta name="theme-color" content="#191617" />
+
+		{
+			!import.meta.env.DEV && (
+				<script
+					defer
+					src="/stats/js/script.js"
+					data-api="/stats/api/event"
+					data-domain="roastyourdeck.com"
+				/>
+			)
+		}
 	</head>
 
 	<body class="bg-white dark:bg-darker">

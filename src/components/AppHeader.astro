@@ -1,5 +1,4 @@
 ---
-import { waitlistUrl } from '../data'
 import Container from './Container.astro'
 import Logo from './Logo.astro'
 ---
@@ -90,9 +89,8 @@ import Logo from './Logo.astro'
 
 					<div class="mt-12 lg:mt-0">
 						<a
-							href={waitlistUrl}
-							target="_blank"
-							rel="noopener noreferrer"
+							href="#pricing"
+							target="_self"
 							class="relative flex w-full items-center justify-center py-2.5 px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
 						>
 							<span
