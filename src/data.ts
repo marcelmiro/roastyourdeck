@@ -65,8 +65,8 @@ export const packages: Package[] = [
 		description:
 			'Get a complete break down of your entire deck and receive unlimited feedback.',
 		price: '299',
-		priceIndicator: 'per week',
-		features: ['Unlimited reviews', '24 hour delivery'],
+		priceIndicator: 'per month',
+		features: ['Unlimited reviews', '48 hour delivery'],
 		purchaseUrl: 'https://airtable.com/shrQzhR2VZ7icETVi',
 	},
 	{
