@@ -50,8 +50,6 @@ interface Package {
 	purchaseUrl: string
 }
 
-const fireEmoji = '%F0%9F%94%A5'
-
 export const packages: Package[] = [
 	{
 		title: 'Quick roast',
@@ -60,7 +58,7 @@ export const packages: Package[] = [
 		price: '4.99',
 		priceIndicator: 'per feedback',
 		features: ['Pay-as-you-go', '48 hour delivery'],
-		purchaseUrl: `https://airtable.com/shrLivExT3iaNxxYq?prefill_Roast%20package=Quick%20Roast%20${fireEmoji}`,
+		purchaseUrl: 'https://airtable.com/shrLivExT3iaNxxYq',
 	},
 	{
 		title: 'Half roast',
@@ -69,7 +67,7 @@ export const packages: Package[] = [
 		price: '299',
 		priceIndicator: 'per week',
 		features: ['Unlimited reviews', '24 hour delivery'],
-		purchaseUrl: `https://airtable.com/shrLivExT3iaNxxYq?prefill_Roast%20package=Half%20Roast%20${fireEmoji}${fireEmoji}`,
+		purchaseUrl: 'https://airtable.com/shrQzhR2VZ7icETVi',
 	},
 	{
 		title: 'Full roast',
@@ -81,6 +79,6 @@ export const packages: Package[] = [
 			'Complete redesign by our experts',
 			'Unlimited changes for a month',
 		],
-		purchaseUrl: `https://airtable.com/shrLivExT3iaNxxYq?prefill_Roast%20package=Full%20Roast%20${fireEmoji}${fireEmoji}${fireEmoji}`,
+		purchaseUrl: 'https://airtable.com/shrMeYM59D9TmZOda',
 	},
 ]
