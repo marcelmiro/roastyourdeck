@@ -95,7 +95,7 @@ export const packages: Package[] = [
 		purchaseUrl: 'https://airtable.com/shrrHWo4Y8dLelyEx',
 	},
 	{
-		title: 'Roast Failed... Reboot 🤖🤖🤖🤖',
+		title: 'Roast Failed... Reboot 🤖',
 		description:
 			'Redo your current deck. Give us the info and we will create an unroastable deck tailored to your startup.',
 		price: '1,999',
