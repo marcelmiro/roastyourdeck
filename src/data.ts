@@ -74,7 +74,10 @@ export const packages: Package[] = [
 			'Detailed feedback on design, structure, copy, product, and strategy',
 			'Video recording of specific suggestions for improvement',
 			'10 potential investor questions',
-			{ text: 'Fundraising strategy tips', disabled: true },
+			{
+				text: 'Fundraising strategy tips in a 1h consultation call',
+				disabled: true,
+			},
 			'24 hour delivery',
 		],
 		purchaseUrl: 'https://airtable.com/shrQzhR2VZ7icETVi',
@@ -82,14 +85,14 @@ export const packages: Package[] = [
 	{
 		title: 'Full Roast 🔥🔥🔥',
 		description:
-			'Everything in Half Roast + 1 hour live consultation to improve delivery and discuss feedback.',
+			'Everything in Half Roast + 1 hour live consultation to improve delivery and discuss fundraising strategy',
 		price: '699',
 		priceIndicator: 'per week',
 		features: [
 			'Detailed feedback on design, structure, copy, product, and strategy',
 			'Video recording of specific suggestions for improvement',
 			'10 potential investor questions',
-			'Fundraising strategy tips',
+			'Fundraising strategy tips in a 1h consultation call',
 			'24 hour delivery',
 		],
 		purchaseUrl: 'https://airtable.com/shrrHWo4Y8dLelyEx',
