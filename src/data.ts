@@ -41,7 +41,7 @@ export const solution: Solution[] = [
 	},
 ]
 
-interface Package {
+export interface Package {
 	title: string
 	description: string
 	price: string // Without dollar symbol
@@ -52,32 +52,60 @@ interface Package {
 
 export const packages: Package[] = [
 	{
-		title: 'Quick roast',
+		title: 'Quick Roast 🔥',
 		description:
-			'Improve your pitch deck for the price of a cup of coffee ☕.',
-		price: '4.99',
-		priceIndicator: 'per feedback',
-		features: ['Pay-as-you-go', '48 hour delivery'],
+			"Improve your pitch deck for the price of a weekend's worth of drinks 🍻.",
+		price: '99',
+		priceIndicator: 'per review',
+		features: [
+			'General written feedback on design, structure, copy, product, and strategy',
+			'3 potential investor questions',
+			'48 hour delivery',
+		],
 		purchaseUrl: 'https://airtable.com/shrLivExT3iaNxxYq',
 	},
 	{
-		title: 'Half roast',
+		title: 'Half Roast 🔥🔥',
 		description:
-			'Get a complete break down of your entire deck and receive unlimited feedback.',
-		price: '299',
-		priceIndicator: 'per month',
-		features: ['Unlimited reviews', '48 hour delivery'],
+			'Get a complete break down of your entire deck and receive unlimited feedback for a week.',
+		price: '499',
+		priceIndicator: 'per week',
+		features: [
+			'Detailed feedback on design, structure, copy, product, and strategy',
+			'Video recording of specific suggestions for improvement',
+			'10 potential investor questions',
+			{ text: 'Fundraising strategy tips', disabled: true },
+			'24 hour delivery',
+		],
 		purchaseUrl: 'https://airtable.com/shrQzhR2VZ7icETVi',
 	},
 	{
-		title: 'Full roast',
+		title: 'Full Roast 🔥🔥🔥',
 		description:
-			"For those who want the perfect pitch deck - Don't worry, leave it in our hands.",
+			'Everything in Half Roast + 1 hour live consultation to improve delivery and discuss feedback.',
+		price: '699',
+		priceIndicator: 'per week',
+		features: [
+			'Detailed feedback on design, structure, copy, product, and strategy',
+			'Video recording of specific suggestions for improvement',
+			'10 potential investor questions',
+			'Fundraising strategy tips',
+			'24 hour delivery',
+		],
+		purchaseUrl: 'https://airtable.com/shrrHWo4Y8dLelyEx',
+	},
+	{
+		title: 'Roast Failed... Reboot 🤖🤖🤖🤖',
+		description:
+			'Redo your current deck. Give us the info and we will create an unroastable deck tailored to your startup.',
 		price: '1,999',
 		priceIndicator: 'one time',
 		features: [
-			'Complete redesign by our experts',
+			'Complete visual redesign by our experts',
 			'Unlimited changes for a month',
+			'1 hour live consultation to improve delivery and discuss feedback',
+			'10 potential investor questions',
+			'Fundraising strategy tips',
 		],
 		purchaseUrl: 'https://airtable.com/shrMeYM59D9TmZOda',
 	},

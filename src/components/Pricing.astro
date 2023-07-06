@@ -2,6 +2,14 @@
 import { packages } from '../data'
 import Container from './Container.astro'
 import Fire from './Fire.astro'
+import Package from './Package.astro'
+
+const containerClass =
+	'mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-b from-gray-200 to-white p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker'
+const contentClass =
+	'relative text-left flex max-lg:flex-col h-full gap-6 xl:gap-12 rounded-3xl bg-gray-100 dark:bg-[#1c191a] divide-y p-8 xs:p-12 dark:divide-gray-800 lg:flex-row lg:divide-y-0 lg:divide-x'
+
+const ultimatePackage = packages[3]
 ---
 
 <div class="relative py-16" id="pricing">
@@ -32,103 +40,55 @@ import Fire from './Fire.astro'
 			</p>
 		</div>
 
-		<div
-			class="mt-12 max-lg:max-w-xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-b from-gray-200 to-white p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker"
-		>
-			<div
-				class="relative text-left flex max-lg:flex-col h-full gap-6 xl:gap-12 rounded-3xl bg-gray-100 dark:bg-[#1c191a] divide-y p-8 xs:p-12 dark:divide-gray-800 lg:flex-row lg:divide-y-0 lg:divide-x"
-			>
+		<div class=`mt-12 max-lg:max-w-xl ${containerClass}`>
+			<div class={contentClass}>
 				{
-					packages.map(
-						(
-							{
-								title,
-								description,
-								price,
-								priceIndicator,
-								features,
-								purchaseUrl,
-							},
-							i,
-						) => (
-							<div
-								class={`lg:w-1/3 ${
+					packages
+						.slice(0, 3)
+						.map((props, i) => (
+							<Package
+								{...props}
+								className={`lg:w-1/3 ${
 									i > 0 ? 'max-lg:pt-6 lg:pl-6 xl:pl-12' : ''
 								}`}
-							>
-								<h3 class="mb-5 text-xl font-medium text-gray-700 dark:text-gray-300">
-									<span class="mr-1 align-middle">
-										{title}
-									</span>
-									{Array.from(Array(i + 1), (_) => (
-										<Fire className="ml-0.5 inline h-5 w-5 align-middle" />
-									))}
-								</h3>
-
-								<div class="inline-flex flex-wrap items-end gap-x-2 gap-y-1">
-									<span class="text-5xl font-bold text-gray-900 dark:text-white sm:text-6xl">
-										<span class="text-4xl -tracking-wide text-primary dark:text-gray-200">
-											$
-										</span>
-										<span>{price}</span>
-									</span>
-									{priceIndicator && (
-										<span class="text-lg text-gray-600 dark:text-gray-200">
-											{priceIndicator}
-										</span>
-									)}
-								</div>
-
-								<p class="mt-4 text-gray-700 dark:text-gray-200">
-									{description}
-								</p>
-
-								<div class="mt-10 flex flex-col gap-3">
-									{features.map((feature) => (
-										<div
-											class={`flex items-start gap-2 text-gray-800 dark:text-white ${
-												typeof feature === 'object' &&
-												feature.disabled
-													? '!text-gray-700 dark:!text-gray-600'
-													: ''
-											}`}
-										>
-											<svg
-												class="mt-1"
-												xmlns="http://www.w3.org/2000/svg"
-												width="16"
-												height="16"
-												viewBox="0 0 16 16"
-												fill="inherit"
-											>
-												<path
-													d="M8 15.5C3.85775 15.5 0.5 12.1423 0.5 8C0.5 3.85775 3.85775 0.5 8 0.5C12.1423 0.5 15.5 3.85775 15.5 8C15.5 12.1423 12.1423 15.5 8 15.5ZM7.25225 11L12.5548 5.69675L11.4943 4.63625L7.25225 8.879L5.1305 6.75725L4.07 7.81775L7.25225 11Z"
-													fill="currentColor"
-												/>
-											</svg>
-											<span class="leading-relaxed">
-												{typeof feature === 'string'
-													? feature
-													: feature.text}
-											</span>
-										</div>
-									))}
-								</div>
-
-								<a
-									href={purchaseUrl}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="relative mt-8 flex w-full items-center justify-center px-4 py-2 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-								>
-									<span class="relative font-semibold text-stone-800">
-										Get started
-									</span>
-								</a>
-							</div>
-						),
-					)
+							/>
+						))
 				}
+			</div>
+		</div>
+
+		<div class={`mt-12 max-lg:max-w-xl ${containerClass}`}>
+			<div class={`${contentClass} lg:[&>*]:w-1/2`}>
+				{ultimatePackage && <Package {...ultimatePackage} />}
+
+				<div class="max-lg:pt-16 max-lg:pb-8 lg:pl-6 xl:pl-12">
+					<div
+						class="flex flex-col justify-center h-full items-center max-w-sm mx-auto text-center"
+					>
+						<h3
+							class="mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
+						>
+							Roast Scholarship
+						</h3>
+
+						<p class="text-gray-700 dark:text-gray-200">
+							Our pricing is set to fairly compensate our experts,
+							but if your runway is short, submit your deck and
+							we'll be happy to negotiate a discount 😊.
+						</p>
+
+						<a
+							href="https://airtable.com/shrV9SoVFNhwiIesv"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="relative mt-8 flex w-full items-center justify-center px-4 py-2 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+						>
+							<span class="relative font-semibold text-stone-800">
+								Submit your deck
+							</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</Container>
