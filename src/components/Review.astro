@@ -12,11 +12,11 @@ const { author, profileUrl, description } = Astro.props
     class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-gray-200 to-white p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker"
 >
     <div
-        class="relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-8 dark:bg-[#1c191a]"
+        class="relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-6 2xs:p-8 dark:bg-[#1c191a]"
     >
         <div class="flex gap-4">
             <img
-                class="h-12 w-12 rounded-full"
+                class="h-10 w-10 2xs:h-12 2xs:w-12 rounded-full"
                 src={profileUrl}
                 alt="profile picture"
                 width="400"
@@ -25,10 +25,14 @@ const { author, profileUrl, description } = Astro.props
             />
 
             <div>
-                <h3 class="text-lg font-medium text-gray-700 dark:text-white">
+                <h3
+                    class="text-lg font-medium text-gray-700 dark:text-white leading-tight"
+                >
                     {author}
                 </h3>
-                <p class="text-sm text-gray-500 dark:text-gray-300">
+                <p
+                    class="mt-1 text-sm text-gray-500 dark:text-gray-300 leading-tight"
+                >
                     {description || <slot name="description" />}
                 </p>
             </div>
